@@ -72,5 +72,8 @@ public class MaluliyetRapor {
     @Column(name = "onayBekleyenDoktorlar",nullable = false)
     private List<DoktorBilgisi> onayBekleyenDoktorlar;
 
+    @OneToOne(mappedBy = "maluliyetRapor")
+    private ImzaliRapor imzaliRapor;
+
 
 }

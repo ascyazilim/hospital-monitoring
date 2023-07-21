@@ -5,8 +5,8 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(name = "raporOnay")
-public class RaporOnay {
+@Table(name = "imzaliRaporSilGiris")
+public class ImzaliRaporSilGiris {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,7 +18,7 @@ public class RaporOnay {
     @Column(length = 11, nullable = false)
     private String doktorTcKimlikNo;
 
-    @Column(nullable = false)
-    private byte raporBilgisi;
+    @Column
+    private byte raporSorguBilgisi;
 
 }
