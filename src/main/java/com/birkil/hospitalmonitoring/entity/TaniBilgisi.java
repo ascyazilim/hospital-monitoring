@@ -37,4 +37,12 @@ public class TaniBilgisi {
     @Column(name = "cokluOzelDurum")
     private List<String> cokluOzelDurum;
 
+    @ManyToOne
+    @JoinColumn(name = "engellilik_rapor_id")
+    private EngellilikRapor engellilikRapor;
+
+    @ManyToOne
+    @JoinColumn(name = "tibbi_gereklilik_rapor_id")
+    private TibbiGereklilikRapor tibbiGereklilikRapor;
+
 }

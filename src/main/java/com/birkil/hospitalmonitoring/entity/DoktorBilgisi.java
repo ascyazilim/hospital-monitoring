@@ -26,4 +26,16 @@ public class DoktorBilgisi {
 
     @Column(length = 1)
     private String tipi;
+
+    @ManyToOne
+    @JoinColumn(name = "maluliyet_rapor_id")
+    private MaluliyetRapor maluliyetRapor;
+
+    @ManyToOne
+    @JoinColumn(name = "engellilik_rapor_id")
+    private EngellilikRapor engellilikRapor;
+
+    @ManyToOne
+    @JoinColumn(name = "tibbi_gereklilik_rapor_id")
+    private TibbiGereklilikRapor tibbiGereklilikRapor;
 }
