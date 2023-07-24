@@ -3,7 +3,7 @@ package com.birkil.hospitalmonitoring.controller;
 
 
 import com.birkil.hospitalmonitoring.entity.HastaBilgileri;
-import com.birkil.hospitalmonitoring.service.PatientService;
+import com.birkil.hospitalmonitoring.service.HastaBilgileriService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class PatientController {
 
-    private PatientService patientService;
+    private HastaBilgileriService patientService;
 
-    public PatientController(PatientService patientService){
+    public PatientController(HastaBilgileriService patientService){
         super();
         this.patientService = patientService;
     }
