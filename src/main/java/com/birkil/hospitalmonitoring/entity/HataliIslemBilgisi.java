@@ -22,6 +22,6 @@ public class HataliIslemBilgisi {
     private String hizmetSunucuRefNo;
 
     @ManyToOne
-    @Column(name = "oncekiIslemBilgisi")
+    @JoinColumn(name = "oncekiIslemBilgisi")
     private OncekiIslemBilgisi oncekiIslemBilgisi;
 }

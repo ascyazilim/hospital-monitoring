@@ -43,7 +43,7 @@ public class TahlilBilgisi {
     private String ozelDurum;
 
     @ManyToOne
-    @Column(name = "tahlilSonuc")
+    @JoinColumn(name = "tahlilSonuc")
     private TahlilSonuc tahlilSonuc;
 
     @ElementCollection
@@ -58,7 +58,7 @@ public class TahlilBilgisi {
     private String istemYapanDrBrans;
 
     @ManyToOne
-    @Column(name = "genBilgisi")
+    @JoinColumn(name = "genBilgisi")
     private GenBilgisi genBilgisi;
 
 }

@@ -53,7 +53,7 @@ public class DiabetTakipFormuKayit {
     private LocalDate taniTarihi;
 
     @OneToOne
-    @Column(name = "diabetEgitimi", nullable = false)
+    @JoinColumn(name = "diabetEgitimi", nullable = false)
     private TakipFormuDiabetEgitimi takipFormuDiabetEgitimi;
 
     @Column(nullable = false)

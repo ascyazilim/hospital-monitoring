@@ -13,7 +13,7 @@ public class RaporSorgu {
     private Long id;
 
     @OneToOne
-    @Column(name = "raporOku", nullable = false)
+    @JoinColumn(name = "raporOku", nullable = false)
     private RaporOku raporOku;
 
     @Column(nullable = false)

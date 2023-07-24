@@ -42,19 +42,19 @@ public class IsgoremezlikRaporEk {
     private LocalDate protokolTarihi;
 
     @OneToOne
-    @Column(name = "yatislar", nullable = false)
+    @JoinColumn(name = "yatislar", nullable = false)
     private HastaYatisBilgisi hastaYatisBilgisi;
 
     @OneToOne
-    @Column(name = "raporBilgisi", nullable = false)
+    @JoinColumn(name = "raporBilgisi", nullable = false)
     private RaporBilgisi raporBilgisi;
 
     @OneToOne
-    @Column(name = "doktorlar", nullable = false)
+    @JoinColumn(name = "doktorlar", nullable = false)
     private DoktorBilgisi doktorBilgisi;
 
     @OneToOne
-    @Column(name = "tanilar", nullable = false)
+    @JoinColumn(name = "tanilar", nullable = false)
     private TaniBilgisi taniBilgisi;
 
     @Column(nullable = false)

@@ -13,7 +13,7 @@ public class TakipFormuKaydetGiris {
     private Long id;
 
     @OneToOne
-    @Column(name = "diabetTakipFormu", nullable = false)
+    @JoinColumn(name = "diabetTakipFormu", nullable = false)
     private DiabetTakipFormuKayit diabetTakipFormuKayit;
 
     @Column(nullable = false)

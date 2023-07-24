@@ -24,8 +24,8 @@ public class IlacTeshisBilgi {
     @Column(nullable = false)
     private int teshisKodu;
 
-    @OneToMany(mappedBy = "ilacTeshisBilgi")
-    @Column(name = "ICD10Kodu", nullable = false)
+    @OneToMany
+    @JoinColumn(name = "ICD10Kodu", nullable = false)
     private List<TaniBilgisi> taniBilgiler;
 
 

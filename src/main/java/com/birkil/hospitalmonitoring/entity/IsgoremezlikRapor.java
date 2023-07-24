@@ -48,18 +48,23 @@ public class IsgoremezlikRapor {
     private Long ilkRaporTakipNo;
 
     @OneToOne
+    @JoinColumn(name = "isKazasiRaporId")
     private IsKazasiRapor isKazasiRapor;
 
     @OneToOne
+    @JoinColumn(name = "meslekHastaligiRaporId")
     private MeslekHastaligiRapor meslekHastaligiRapor;
 
     @OneToOne
+    @JoinColumn(name = "analikRaporId")
     private AnalikRapor analikRapor;
 
     @OneToOne
+    @JoinColumn(name = "emzirmeRaporId")
     private EmzirmeRapor emzirmeRapor;
 
     @OneToOne
+    @JoinColumn(name = "hastalikRaporId")
     private HastalikRapor hastalikRapor;
 
     @Column(name = "klinikBulgular", length = 20)
@@ -72,6 +77,7 @@ public class IsgoremezlikRapor {
     private String karar;
 
     @OneToOne
+    @JoinColumn(name = "doktorBilgisiId")
     private DoktorBilgisi doktorBilgisi;
 
     @Column(name = "bashekimOnayDurumu")
@@ -81,6 +87,7 @@ public class IsgoremezlikRapor {
     private String bashekimTCNo;
 
     @OneToOne
+    @JoinColumn(name = "haksahibiBilgisiId")
     private HakSahibiBilgisi hakSahibiBilgisi;
 
     @Column(name = "devammi", length = 1, nullable = false)

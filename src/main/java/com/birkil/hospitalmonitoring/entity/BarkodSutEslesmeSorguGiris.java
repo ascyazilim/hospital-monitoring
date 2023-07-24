@@ -10,6 +10,10 @@ import java.time.LocalDate;
 @Table(name = "barkodSutEslesmeSorguGiris")
 public class BarkodSutEslesmeSorguGiris {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     @Column(nullable = false)
     private int saglikTesisKodu;
 

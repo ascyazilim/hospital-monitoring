@@ -36,16 +36,16 @@ public class IlacRaporDuzelt {
     @Column(nullable = false)
     private int tesisKodu;
 
-    @OneToMany(mappedBy = "ilacRaporDuzelt")
-    @Column(name = "raporEtkinMaddeler")
+    @OneToMany
+    @JoinColumn(name = "raporEtkinMaddeler")
     private List<RaporEtkinMadde> raporEtkinMaddeler;
 
-    @OneToMany(mappedBy = "ilacRaporDuzelt")
-    @Column(name = "tanilar")
+    @OneToMany
+    @JoinColumn(name = "tanilar")
     private List<TaniBilgisi> tanilar;
 
-    @OneToMany(mappedBy = "ilacRaporDuzelt")
-    @Column(name = "ilacTeshisler")
+    @OneToMany
+    @JoinColumn(name = "ilacTeshisler")
     private List<IlacTeshisBilgi> ilacTeshisler;
 
 

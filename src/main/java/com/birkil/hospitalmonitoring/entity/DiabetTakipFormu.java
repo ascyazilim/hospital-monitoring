@@ -46,7 +46,7 @@ public class DiabetTakipFormu {
     private int ikametTuru;
 
     @OneToMany
-    @Column(name = "doktorBilgileri")
+    @JoinColumn(name = "takipFormuDoktorBilgisi")
     private List<TakipFormuDoktorBilgisi> takipFormuDoktorBilgisi;
 
     @Column
@@ -55,8 +55,8 @@ public class DiabetTakipFormu {
     @Column
     private LocalDate taniTarihi;
 
-    @OneToOne
-    @Column(name = "diabetEgitimi")
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "takipFormuDiabetEgitimi")
     private TakipFormuDiabetEgitimi takipFormuDiabetEgitimi;
 
     @Column
@@ -66,14 +66,14 @@ public class DiabetTakipFormu {
     private int egzersiz;
 
     @OneToMany
-    @Column(name = "hastaliklar")
+    @JoinColumn(name = "takipFormuHastalik")
     private List<TakipFormuHastalik> takipFormuHastalik;
 
     @Column
     private int basvuruNedeni;
 
     @OneToMany
-    @Column(name = "aliskanliklar")
+    @JoinColumn(name = "takipFormuAliskanlik")
     private List<TakipFormuAliskanlik> takipFormuAliskanlik;
 
     @Column(length = 1)
@@ -83,7 +83,7 @@ public class DiabetTakipFormu {
     private int kanSekeriTakipSayisi;
 
     @OneToMany
-    @Column(name = "kullanilanIlaclar")
+    @JoinColumn(name = "takipFormuKullanilanIlaclar")
     private List<TakipFormuKullanilanIlaclar> takipFormuKullanilanIlaclar;
 
     @Column

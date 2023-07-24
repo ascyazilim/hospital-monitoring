@@ -15,7 +15,7 @@ public class Rapor {
     private Long id;
 
     @OneToOne
-    @Column(nullable = false)
+    @JoinColumn(nullable = false)
     private RaporBilgisi raporBilgisi;
 
     @Column(nullable = false)
@@ -31,7 +31,7 @@ public class Rapor {
     private String duzenlemeTuru;
 
     @OneToOne
-    @Column(name = "hakSahibi", nullable = false)
+    @JoinColumn(name = "hakSahibi", nullable = false)
     private HakSahibiBilgisi hakSahibiBilgisi;
 
     @Column(length = 20)
@@ -47,19 +47,19 @@ public class Rapor {
     private String aciklama;
 
     @OneToOne
-    @Column(name = "doktorlar", nullable = false)
+    @JoinColumn(name = "doktorlar", nullable = false)
     private DoktorBilgisi doktorBilgisi;
 
     @OneToOne
-    @Column(name = "tanilar")
+    @JoinColumn(name = "tanilar")
     private TaniBilgisi taniBilgisi;
 
     @OneToOne
-    @Column(name = "teshisler")
+    @JoinColumn(name = "teshisler")
     private TeshisBilgisi teshisBilgisi;
 
     @OneToOne
-    @Column(name = "ilacTeshisler")
+    @JoinColumn(name = "ilacTeshisler")
     private IlacTeshisBilgi ilacTeshisBilgi;
 
     @Column

@@ -13,30 +13,30 @@ public class TedaviIslemBilgisi {
     private Long id;
 
     @OneToOne
-    @Column(name = "diyalizRaporBilgisi")
+    @JoinColumn(name = "diyalizRaporBilgisi")
     private DiyalizRaporBilgisi diyalizRaporBilgisi;
 
     @OneToOne
-    @Column(name = "eswlRaporBilgisi")
+    @JoinColumn(name = "eswlRaporBilgisi")
     private ESWLRaporBilgisi eswlRaporBilgisi;
 
     @OneToOne
-    @Column(name = "eswtRaporBilgisi")
+    @JoinColumn(name = "eswtRaporBilgisi")
     private ESWTRaporBilgisi eswtRaporBilgisi;
 
     @OneToOne
-    @Column(name = "ftrRaporBilgisi")
+    @JoinColumn(name = "ftrRaporBilgisi")
     private FTRRaporBilgisi ftrRaporBilgisi;
 
     @OneToOne
-    @Column(name = "hotRaporBilgisi")
+    @JoinColumn(name = "hotRaporBilgisi")
     private HOTRaporBilgisi hotRaporBilgisi;
 
     @OneToOne
-    @Column(name = "tupBebekRaporBilgisi")
+    @JoinColumn(name = "tupBebekRaporBilgisi")
     private TupBebekRaporBilgisi tupBebekRaporBilgisi;
 
     @OneToOne
-    @Column(name = "evHemodiyaliziRaporBilgisi")
+    @JoinColumn(name = "evHemodiyaliziRaporBilgisi")
     private EvHemodiyaliziRaporBilgisi evHemodiyaliziRaporBilgisi;
 }

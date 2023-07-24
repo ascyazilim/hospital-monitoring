@@ -25,7 +25,7 @@ public class ESWLRaporBilgisi {
     private int bobrekBilgisi;
 
     @OneToOne
-    @Column(name = "eswlTasBilgisi", nullable = false)
+    @JoinColumn(name = "eswlTasBilgisi", nullable = false)
     private ESWLTasBilgisi eswlTasBilgisi;
 
 }

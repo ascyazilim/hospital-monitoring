@@ -32,8 +32,6 @@ public class HakSahibiBilgisi {
     @Column(length = 1, nullable = false)
     private String devredilenKurum;
 
-    @Column
-    private String baglibulunanbirim;
 
     @Column(length = 1, nullable = false)
     private String provizyonTipi;

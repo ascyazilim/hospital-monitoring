@@ -16,14 +16,14 @@ public class ImzaliRapor {
     private int turu;
 
     @OneToOne
-    @Column(name = "maluliyetRaporu")
+    @JoinColumn(name = "maluliyetRaporId")
     private MaluliyetRapor maluliyetRapor;
 
     @OneToOne
-    @Column(name = "engellilikRapor")
+    @JoinColumn(name = "engellilikRaporId")
     private EngellilikRapor engellilikRapor;
 
     @OneToOne
-    @Column(name = "tibbiGereklilikRapor")
+    @JoinColumn(name = "tibbiGereklilikRaporId")
     private TibbiGereklilikRapor tibbiGereklilikRapor;
 }

@@ -13,11 +13,11 @@ public class TedaviRapor {
     private Long id;
 
     @OneToOne
-    @Column(nullable = false)
+    @JoinColumn(nullable = false)
     private Rapor rapor;
 
     @OneToOne
-    @Column(nullable = false)
+    @JoinColumn(nullable = false)
     private TedaviIslemBilgisi tedaviIslemBilgisi;
 
     @Column(name = "tedaviRaporTuru", nullable = false)

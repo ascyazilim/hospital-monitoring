@@ -36,8 +36,8 @@ public class TibbiGereklilikRapor {
     @Column(nullable = false)
     private int istekNedeni;
 
-    @OneToMany(mappedBy = "tibbiGereklilikRapor")
-    @Column(name = "tanilar", nullable = false)
+    @OneToMany
+    @JoinColumn(name = "tanilar", nullable = false)
     private List<TaniBilgisi> tanilar;
 
     @Column(nullable = false)
@@ -46,12 +46,12 @@ public class TibbiGereklilikRapor {
     @Column(length = 2000, nullable = false)
     private String karar;
 
-    @OneToMany(mappedBy = "tibbiGereklilikRapor")
-    @Column(name = "islemler", nullable = false)
+    @OneToMany
+    @JoinColumn(name = "islemler", nullable = false)
     private List<SutIslemBilgisi> islemler;
 
-    @OneToMany(mappedBy = "tibbiGereklilikRapor")
-    @Column(name = "doktorlar",nullable = false)
+    @OneToMany
+    @JoinColumn(name = "doktorlar",nullable = false)
     private List<DoktorBilgisi> doktorlar;
 
     @OneToOne(mappedBy = "tibbiGereklilikRapor")
