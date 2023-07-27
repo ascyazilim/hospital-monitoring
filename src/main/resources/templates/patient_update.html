@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Hasta Bilgilerini Güncelle</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <h2>Hasta Bilgilerini Güncelle</h2>
+    <form id="updateForm">
+        <input type="hidden" id="id" name="id" th:value="${hasta.id}">
+        <div class="form-group">
+            <label for="tcKimNo">TC Kimlik No:</label>
+            <input type="text" id="tcKimNo" name="tcKimNo" class="form-control" th:value="${hasta.tcKimNo}" required>
+        </div>
+        <!-- Diğer alanları da aynı şekilde ekleyin -->
+
+        <button type="button" onclick="updateHasta()" class="btn btn-primary">Güncelle</button>
+    </form>
+</div>
+
+<!-- jQuery kütüphanesini ekleyin -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    function updateHasta() {
+        var hastaData = {
+            id: $("#id").val(),
+            tcKimNo: $("#tcKimNo").val(),
+            // Diğer alanları da aynı şekilde alın
+        };
+
+        $.ajax({
+            type: "POST",
+            contentType: "application/json",
+            url: "/hasta/update/" + hastaData.id,
+            data: JSON.stringify(hastaData),
+            dataType: 'json',
+            success: function (data) {
+                alert("Hasta bilgileri başarıyla güncellendi.");
+                // Başarılı güncelleme durumunda istenilen bir işlem yapabilirsiniz.
+            },
+            error: function (error) {
+                alert("Hasta bilgileri güncellenirken bir hata oluştu.");
+                // Hata durumunda kullanıcıya bilgi vermek için istenilen bir işlem yapabilirsiniz.
+            }
+        });
+    }
+</script>
+</body>
+</html>

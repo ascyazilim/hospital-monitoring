@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Hasta Oluştur</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    button {
+      width: 100%;
+      padding: 8px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 15px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+<h2>Hasta Oluştur</h2>
+<form id="hastaForm" th:action="@{/hasta/create}" method="post">
+  <label for="tcKimNo">TC Kimlik No:</label>
+  <input type="text" id="tcKimNo" name="tcKimNo" required><br>
+
+  <label for="ad">Ad:</label>
+  <input type="text" id="ad" name="ad" required><br>
+
+  <label for="soyad">Soyad:</label>
+  <input type="text" id="soyad" name="soyad" required><br>
+
+  <label for="cinsiyet">Cinsiyet:</label>
+  <input type="text" id="cinsiyet" name="cinsiyet" required><br>
+
+  <label for="dogumTarihi">Doğum Tarihi:</label>
+  <input type="date" id="dogumTarihi" name="dogumTarihi" required><br>
+
+  <label for="sigortaliTuru">Sigortalı Türü:</label>
+  <input type="text" id="sigortaliTuru" name="sigortaliTuru" required><br>
+
+  <label for="devredilenKurum">Devredilen Kurum:</label>
+  <input type="text" id="devredilenKurum" name="devredilenKurum"><br>
+
+  <label for="katilimPayindanMuaf">Katılım Payından Muaf:</label>
+  <input type="text" id="katilimPayindanMuaf" name="katilimPayindanMuaf" required><br>
+
+  <label for="kapsamAdi">Kapsam Adı:</label>
+  <input type="text" id="kapsamAdi" name="kapsamAdi" required><br>
+
+  <label for="ilaveUcrettenMuaf">İlave Ücretten Muaf:</label>
+  <input type="text" id="ilaveUcrettenMuaf" name="ilaveUcrettenMuaf" required><br>
+
+  <button type="submit">Oluştur</button>
+</form>
+
+<div id="message" style="display: none;"></div>
+
+<!-- jQuery kütüphanesini ekleyin -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function () {
+    // Form submit edildiğinde
+    $("#hastaForm").submit(function (event) {
+      // Sayfanın yenilenmesini önlemek için
+      event.preventDefault();
+
+      // Formdaki verileri al
+      var hastaData = {
+        id: $("#id").val(),
+        ad: $("#ad").val(),
+        soyad: $("#soyad").val(),
+        tcKimNo: $("#tcKimNo").val(),
+        cinsiyet: $("#cinsiyet").val(),
+        dogumTarihi: $("#dogumTarihi").val(),
+        sigortaliTuru: $("#sigortaliTuru").val(),
+        devredilenKurum: $("#devredilenKurum").val(),
+        katilimPayindanMuaf: $("#katilimPayindanMuaf").prop("checked"),
+        kapsamAdi: $("#kapsamAdi").val(),
+        ilaveUcrettenMuaf: $("#ilaveUcrettenMuaf").prop("checked")
+        // Diğer alanları da buraya ekleyin
+      };
+
+      $.ajax({
+        type: "POST",
+        contentType: "application/json",
+        url: "/hasta/create", // API endpoint URL'si
+        data: JSON.stringify(hastaData),
+        dataType: 'json',
+        success: function (data) {
+          // Başarıyla kaydedildiğinde yapılacak işlemler
+          alert("Hasta başarıyla kaydedildi.");
+          // İstenirse başka bir sayfaya yönlendirilebilir
+          window.location.href = "/hasta/all"; // Örnek olarak hasta listesine yönlendiriyoruz
+        },
+        error: function (error) {
+          // Hata durumunda yapılacak işlemler
+          alert("Hasta kaydedilirken bir hata oluştu. " + error.responseText);
+        }
+      });
+    });
+  });
+</script>
+</body>
+</html>

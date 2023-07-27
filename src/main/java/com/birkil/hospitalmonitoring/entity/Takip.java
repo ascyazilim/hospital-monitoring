@@ -93,6 +93,6 @@ public class Takip {
     @Column(name = "maluliyetSevkTarihi", nullable = false)
     private String maluliyetSevkTarihi;
 
-    @OneToMany(mappedBy = "takip", cascade = CascadeType.ALL)
-    private List<HastaBilgileri> hastaBilgileri;
+    //@OneToMany(mappedBy = "takip", cascade = CascadeType.ALL)
+    //private List<HastaBilgileri> hastaBilgileri;
 }
