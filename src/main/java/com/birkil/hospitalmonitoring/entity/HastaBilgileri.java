@@ -18,9 +18,8 @@ import java.util.UUID;
 public class HastaBilgileri {
 
     @Id
-    @GeneratedValue(generator = "UUID")
-    @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
 
     @Column(name = "tcKimlikNo", nullable = false)
     private String tcKimNo;

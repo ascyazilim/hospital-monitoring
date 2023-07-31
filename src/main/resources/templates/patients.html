@@ -1,81 +1,54 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
+
 <head>
   <meta charset="UTF-8">
-  <title>Hasta Listesi</title>
-  <!-- Gerekli stil ve diğer bağımlılıkları ekleyebilirsiniz -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-        crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hasta Bilgileri</title>
+
+  <!-- CSS dosyası burada yüklenecek -->
+  <link rel="stylesheet" th:href="@{/css/style.css}" />
+
+  <!-- JavaScript dosyası burada yüklenecek -->
+  <script th:src="@{/js/script.js}" defer></script>
 </head>
+
 <body>
-<div class="container">
-  <h2>Hasta Listesi</h2>
-  <div class="table-responsive"> <!-- Tablo mobil cihazlarda kaydırılabilir olacak -->
-    <table class="table table-striped table-bordered table-hover">
-      <thead>
-      <tr>
-        <th>ID</th>
-        <th>Ad</th>
-        <th>Soyad</th>
-        <th>TC Kimlik No</th>
-        <th>Cinsiyet</th>
-        <th>Doğum Tarihi</th>
-        <th>Sigortalı Türü</th>
-        <th>Devredilen Kurum</th>
-        <th>Katılım Payından Muaf</th>
-        <th>Kapsam Adı</th>
-        <th>İlave Ücretten Muaf</th>
-        <!-- Diğer alanları buraya ekleyin -->
-      </tr>
-      </thead>
-      <tbody>
-      <!-- Hasta bilgileri burada doldurulacak -->
-      </tbody>
-    </table>
-  </div>
-</div>
+<h1>Hasta Bilgileri</h1>
 
-<!-- jQuery kütüphanesini ekleyin -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script th:inline="javascript">
-  $(document).ready(function () {
-    // Sayfa yüklendiğinde tüm hastaları getir
-    $.ajax({
-      type: "GET",
-      url: /*[[${baseUrl}]]*/ "/hasta/all", // Thymeleaf değişkenini kullanarak API endpoint URL'si
-      success: function (data) {
-        // Hasta listesi başarıyla alındığında yapılacak işlemler
-        populateTable(data);
-      },
-      error: function (error) {
-        // Hata durumunda yapılacak işlemler
-        console.log("Hasta listesi alınamadı: " + error);
-      }
-    });
-
-    // Hastaların listesini tabloya doldur
-    function populateTable(patients) {
-      var tbody = $("tbody");
-      patients.forEach(function (patient) {
-        var row = "<tr>" +
-                "<td>" + patient.id + "</td>" +
-                "<td>" + patient.ad + "</td>" +
-                "<td>" + patient.soyad + "</td>" +
-                "<td>" + patient.tcKimNo + "</td>" +
-                "<td>" + patient.cinsiyet + "</td>" +
-                "<td>" + patient.dogumTarihi + "</td>" +
-                "<td>" + patient.sigortaliTuru + "</td>" +
-                "<td>" + (patient.devredilenKurum ? patient.devredilenKurum : "-") + "</td>" +
-                "<td>" + patient.katilimPayindanMuaf + "</td>" +
-                "<td>" + patient.kapsamAdi + "</td>" +
-                "<td>" + patient.ilaveUcrettenMuaf + "</td>" +
-                // Diğer alanları buraya ekleyin
-                "</tr>";
-        tbody.append(row);
-      });
-    }
-  });
-</script>
+<table>
+  <thead>
+  <tr>
+    <th>Id</th>
+    <th>TC Kimlik No</th>
+    <th>Ad</th>
+    <th>Soyad</th>
+    <th>Cinsiyet</th>
+    <th>Doğum Tarihi</th>
+    <th>Sigortalı Türü</th>
+    <th>Devredilen Kurum</th>
+    <th>Katılım Payından Muaf</th>
+    <th>Kapsam Adı</th>
+    <th>İlave Ücretten Muaf</th>
+  </tr>
+  </thead>
+  <tbody>
+  <!-- Hasta bilgilerini burada döngü ile listeleyeceğiz -->
+  <tr th:each="hasta : ${hastaList}">
+    <td th:text="${hasta.id}"></td>
+    <td th:text="${hasta.tcKimNo}"></td>
+    <td th:text="${hasta.ad}"></td>
+    <td th:text="${hasta.soyad}"></td>
+    <td th:text="${hasta.cinsiyet}"></td>
+    <td th:text="${hasta.dogumTarihi}"></td>
+    <td th:text="${hasta.sigortaliTuru}"></td>
+    <td th:text="${hasta.devredilenKurum}"></td>
+    <td th:text="${hasta.katilimPayindanMuaf}"></td>
+    <td th:text="${hasta.kapsamAdi}"></td>
+    <td th:text="${hasta.ilaveUcrettenMuaf}"></td>
+  </tr>
+  </tbody>
+</table>
 </body>
+
 </html>

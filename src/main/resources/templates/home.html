@@ -2,9 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
   <meta charset="UTF-8">
-  <title>Inventory Home</title>
+  <title>Hastane Monitoring Anasayfa</title>
   <style>
     /* CSS stilini buraya ekleyebilirsiniz */
+    body {
+      font-family: Arial, sans-serif;
+    }
+
     nav {
       background-color: #f2f2f2;
       padding: 10px;
@@ -14,6 +18,7 @@
       list-style-type: none;
       margin: 0;
       padding: 0;
+      text-align: center;
     }
 
     nav li {
@@ -24,23 +29,85 @@
     nav li a {
       text-decoration: none;
       color: #333;
+      font-weight: bold;
     }
 
     h1 {
       text-align: center;
       margin-top: 30px;
+      color: #337ab7;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .hero-image {
+      background-image: url('your-background-image.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 400px;
+      margin-bottom: 20px;
+    }
+
+    .hero-text {
+      text-align: center;
+      padding: 100px;
+      color: white;
+      font-size: 36px;
+      font-weight: bold;
+    }
+
+    .info-box {
+      border: 1px solid #ddd;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+
+    .info-box h2 {
+      color: #337ab7;
+      margin-top: 0;
+    }
+
+    .info-box p {
+      margin-bottom: 0;
     }
   </style>
 </head>
 <body>
 <nav role="navigation">
   <ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="/users">Users</a></li>
-    <li><a href="/items">Items</a></li>
+    <li><a href="/">Ana Sayfa</a></li>
+    <li><a href="/users">Hastalar</a></li>
+    <li><a href="/items">Doktorlar</a></li>
   </ul>
 </nav>
 
-<h1>Welcome!</h1>
+<div class="hero-image">
+  <div class="hero-text">
+    <h1>Hastane Monitoring!</h1>
+    <p>Size en iyi hizmeti sunmak için buradayız.</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="info-box">
+    <h2>Hakkımızda</h2>
+    <p>Hastane Monitoring, hastanelerdeki hastaların ve doktorların verimliliğini artırmayı hedefleyen bir proje...</p>
+  </div>
+
+  <div class="info-box">
+    <h2>Hastalar</h2>
+    <p>Hastalar bölümünde hastalarınızın bilgilerini görüntüleyebilir ve güncelleyebilirsiniz...</p>
+  </div>
+
+  <div class="info-box">
+    <h2>Doktorlar</h2>
+    <p>Doktorlar bölümünde doktorlarınızın bilgilerini görüntüleyebilir ve düzenleyebilirsiniz...</p>
+  </div>
+</div>
+
 </body>
 </html>

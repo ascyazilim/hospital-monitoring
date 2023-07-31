@@ -1,0 +1,28 @@
+/* CSS stilleri burada yer alacak */
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: #007bff;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #f8f8f8;
+}

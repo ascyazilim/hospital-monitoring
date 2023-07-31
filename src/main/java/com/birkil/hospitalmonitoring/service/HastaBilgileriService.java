@@ -22,7 +22,7 @@ public class HastaBilgileriService {
         return hastaBilgileriRepository.findAll();
     }
 
-    public HastaBilgileri getHastaById(Long id) {
+    public HastaBilgileri getHastaById(long id) {
         Optional<HastaBilgileri> optionalHasta = hastaBilgileriRepository.findById(id);
         return optionalHasta.orElse(null);
     }
@@ -31,7 +31,7 @@ public class HastaBilgileriService {
         return hastaBilgileriRepository.save(hastaBilgileri);
     }
 
-    public HastaBilgileri updateHasta(Long id, HastaBilgileri hastaBilgileri) {
+    public HastaBilgileri updateHasta(long id, HastaBilgileri hastaBilgileri) {
 
         HastaBilgileri existingHasta = getHastaById(id);
         if(existingHasta != null){
@@ -54,7 +54,7 @@ public class HastaBilgileriService {
         }
     }
 
-    public boolean deleteHasta(Long id) {
+    public boolean deleteHasta(long id) {
         if (hastaBilgileriRepository.existsById(id)) {
             hastaBilgileriRepository.deleteById(id);
             return true;
