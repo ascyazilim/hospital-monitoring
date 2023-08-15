@@ -32,17 +32,17 @@ public class TaniBilgisi {
     @Column(name = "ozelDurum", length = 1)
     private String ozelDurum;
 
-    @ElementCollection
+    /*@ElementCollection
     @CollectionTable(name = "ozelDurumlar", joinColumns = @JoinColumn(name = "id"))
     @Column(name = "cokluOzelDurum")
-    private List<String> cokluOzelDurum;
+    private List<String> cokluOzelDurum;*/
 
-    @ManyToOne
+   /* @ManyToOne
     @JoinColumn(name = "engellilik_rapor_id")
     private EngellilikRapor engellilikRapor;
 
     @ManyToOne
     @JoinColumn(name = "tibbi_gereklilik_rapor_id")
-    private TibbiGereklilikRapor tibbiGereklilikRapor;
+    private TibbiGereklilikRapor tibbiGereklilikRapor;*/
 
 }

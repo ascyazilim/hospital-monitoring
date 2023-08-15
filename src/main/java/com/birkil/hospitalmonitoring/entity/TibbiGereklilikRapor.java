@@ -36,9 +36,9 @@ public class TibbiGereklilikRapor {
     @Column(nullable = false)
     private int istekNedeni;
 
-    @OneToMany
+   /* @OneToMany
     @JoinColumn(name = "tanilar", nullable = false)
-    private List<TaniBilgisi> tanilar;
+    private List<TaniBilgisi> tanilar;*/
 
     @Column(nullable = false)
     private String protokolNo;

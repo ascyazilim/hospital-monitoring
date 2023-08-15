@@ -93,9 +93,9 @@ public class EngellilikRapor {
     @Column(length = 1, nullable = false)
     private String siniflanamayanEngeliVar;
 
-    @OneToMany(mappedBy = "engellilikRapor")
+   /* @OneToMany(mappedBy = "engellilikRapor")
     @Column(name = "tanilar", nullable = false)
-    private List<TaniBilgisi> tanilar;
+    private List<TaniBilgisi> tanilar;*/
 
     @OneToMany(mappedBy = "engellilikRapor")
     @Column(name = "bransGorusler", nullable = false)
