@@ -36,8 +36,8 @@ public class MuayeneBilgisi {
     @Column(name = "ozelDurum", length = 1)
     private String ozelDurum;
 
-    @ElementCollection
+    /*@ElementCollection
     @CollectionTable(name = "ozelDurumlar", joinColumns = @JoinColumn(name = "id"))
     @Column(name = "cokluOzelDurum")
-    private List<String> cokluOzelDurum;
+    private List<String> cokluOzelDurum;*/
 }
