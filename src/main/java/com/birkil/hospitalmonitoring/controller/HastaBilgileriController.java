@@ -27,6 +27,11 @@ public class HastaBilgileriController {
         List<HastaBilgileri> hastaBilgileriList = hastaBilgileriService.getAllHasta();
         return ResponseEntity.ok(hastaBilgileriList);
     }
+/*    @GetMapping("/adi")
+    public ResponseEntity<List<HastaBilgileri>> getAllHastaBilgisi(@RequestParam(name = "adi") String adi){
+        List<HastaBilgileri> hastaBilgileriList = hastaBilgileriService.getHastaByAdi(adi); // Burada adı ile filtreleme yapılacak
+        return ResponseEntity.ok(hastaBilgileriList);
+    }*/
 
     @GetMapping("/{id}")
     public ResponseEntity<HastaBilgileri> getHastaBilgisiById(@PathVariable Long id){

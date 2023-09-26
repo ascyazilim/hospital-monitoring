@@ -63,4 +63,10 @@ public class HastaBilgileriService {
         }
 
     }
+
+    /*public List<HastaBilgileri> getHastaByAdi(String adi) {
+        return hastaBilgileriRepository.findByAdContainingIgnoreCase(adi);
+    }*/
+
+
 }
