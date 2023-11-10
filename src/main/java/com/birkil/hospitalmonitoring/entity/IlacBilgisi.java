@@ -12,6 +12,9 @@ public class IlacBilgisi {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "ad")
+    private String ad;
+
     @Column(name = "aciklama", length = 255)
     private String aciklama;
 
@@ -59,6 +62,5 @@ public class IlacBilgisi {
 
     @ManyToOne
     private MajistralIlac majistralIlac;
-
 
 }

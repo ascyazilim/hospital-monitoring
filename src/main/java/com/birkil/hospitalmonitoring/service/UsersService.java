@@ -11,6 +11,7 @@ public class UsersService {
 
     private final UsersRepository usersRepository;
 
+
     public UsersService(UsersRepository usersRepository) {
         this.usersRepository = usersRepository;
     }
@@ -24,6 +25,12 @@ public class UsersService {
         return usersRepository.findById(id)
                 .orElseThrow(()-> new RuntimeException("User not found with id: " +id));
     }
+
+    public Users getUserByUserNameAndPassword(String username, String password){
+        return usersRepository.findByUsernameAndPassword(username, password);
+    }
+
+
     //Create
     public Users createUsers(Users users){
         return usersRepository.save(users);

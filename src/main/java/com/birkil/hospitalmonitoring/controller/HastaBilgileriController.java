@@ -3,6 +3,7 @@ package com.birkil.hospitalmonitoring.controller;
 import com.birkil.hospitalmonitoring.entity.HastaBilgileri;
 import com.birkil.hospitalmonitoring.service.HastaBilgileriService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,18 +28,18 @@ public class HastaBilgileriController {
         List<HastaBilgileri> hastaBilgileriList = hastaBilgileriService.getAllHasta();
         return ResponseEntity.ok(hastaBilgileriList);
     }
-/*    @GetMapping("/adi")
-    public ResponseEntity<List<HastaBilgileri>> getAllHastaBilgisi(@RequestParam(name = "adi") String adi){
-        List<HastaBilgileri> hastaBilgileriList = hastaBilgileriService.getHastaByAdi(adi); // Burada adı ile filtreleme yapılacak
-        return ResponseEntity.ok(hastaBilgileriList);
-    }*/
+
+    @GetMapping("/search")
+    public ResponseEntity<List<HastaBilgileri>> searchHastaBilgileri(@RequestParam("query") String query){
+        return ResponseEntity.ok(hastaBilgileriService.searchHasta(query));
+    }
 
     @GetMapping("/{id}")
     public ResponseEntity<HastaBilgileri> getHastaBilgisiById(@PathVariable Long id){
         HastaBilgileri hastaBilgileri = hastaBilgileriService.getHastaById(id);
         return ResponseEntity.ok(hastaBilgileri);
     }
-
+    //
     @PostMapping("/create")
     public ResponseEntity<HastaBilgileri> createHastaBilgisi(@RequestBody HastaBilgileri hastaBilgileri){
         HastaBilgileri createdHastaBilgisi = hastaBilgileriService.createHasta(hastaBilgileri);

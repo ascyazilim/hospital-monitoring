@@ -3,6 +3,8 @@ package com.birkil.hospitalmonitoring.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
+
 @Entity
 @Data
 @Table(name = "taniList")
@@ -17,4 +19,9 @@ public class TaniList {
 
     @Column
     private String taniAdi;
+
+
+    /*@ManyToMany(mappedBy = "taniList")
+    private List<MuayeneKaydet> muayeneKaydetList;*/
+
 }

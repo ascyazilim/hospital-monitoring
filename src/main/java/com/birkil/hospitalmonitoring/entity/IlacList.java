@@ -23,6 +23,9 @@ public class IlacList {
     @Column(length = 13)
     private String barkod;
 
+    @Column
+    private String doz;
+
     @Column(length = 50)
     private String ilacAdi;
 

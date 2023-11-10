@@ -4,4 +4,5 @@ import com.birkil.hospitalmonitoring.entity.TaniList;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface TaniListRespository extends JpaRepository<TaniList, Long> {
+    TaniList findByIcd10Kodu(String icd10Kodu);
 }

@@ -22,10 +22,23 @@ public class HastaBilgileriService {
         return hastaBilgileriRepository.findAll();
     }
 
+    /*public HastaBilgileri findByTcKimlikNo(String tcKimNo) {
+        return hastaBilgileriRepository.findByTcKimlikNo(tcKimNo);
+    }*/
+
+    public List<HastaBilgileri> searchHasta(String query) {
+        List<HastaBilgileri> hasta =   hastaBilgileriRepository.searchHasta(query);
+        return hasta;
+    }
+
     public HastaBilgileri getHastaById(long id) {
         Optional<HastaBilgileri> optionalHasta = hastaBilgileriRepository.findById(id);
         return optionalHasta.orElse(null);
     }
+
+    /*public HastaBilgileri getHastaByTcKimlikNo(String tcKimNo) {
+        return hastaBilgileriRepository.findByTcKimlikNo(tcKimNo);
+    }*/
 
     public HastaBilgileri createHasta(HastaBilgileri hastaBilgileri) {
         return hastaBilgileriRepository.save(hastaBilgileri);
@@ -64,9 +77,7 @@ public class HastaBilgileriService {
 
     }
 
-    /*public List<HastaBilgileri> getHastaByAdi(String adi) {
-        return hastaBilgileriRepository.findByAdContainingIgnoreCase(adi);
-    }*/
+
 
 
 }

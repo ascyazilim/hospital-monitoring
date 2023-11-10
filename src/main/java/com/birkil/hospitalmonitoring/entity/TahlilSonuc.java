@@ -12,25 +12,16 @@ public class TahlilSonuc {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "islemSiraNo", length = 15, nullable = false)
-    private String islemSiraNo;
+    @Column
+    private String rontgenSonuc;
 
-    @Column(name = "sonuc", length = 15, nullable = false)
-    private String sonuc;
+    @Column
+    private String kanSonuc;
 
-    @Column(name = "tahlilTipi", length = 6, nullable = false)
-    private String tahlilTipi;
+    @Column
+    private String idrarSonuc;
 
-    @Column(name = "birim", length = 15, nullable = false)
-    private String birim;
-
-    @Column(name = "sagSol", length = 1)
-    private String sagSol;
-
-    @Column(name = "ayniFarkliKesi", length = 1)
-    private String ayniFarkliKesi;
-
-    @Column(name = "aciklama")
-    private String aciklama;
+    @Column
+    private String tomografiSonuc;
 
 }
