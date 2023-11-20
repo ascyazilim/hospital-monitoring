@@ -41,7 +41,7 @@ public class MuayeneKaydetController {
         MuayeneKaydet updatedMuayeneKaydet = muayeneKaydetService.updateMuayeneKaydet(id, muayeneKaydet);
         return ResponseEntity.ok(updatedMuayeneKaydet);
     }
-
+/**/
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deleteMuayeneKaydet(@PathVariable Long id){
         muayeneKaydetService.deleteMuayeneKaydet(id);

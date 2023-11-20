@@ -5,15 +5,16 @@ import lombok.Data;
 
 @Entity
 @Data
-public class Users {
-
+@Table(name = "user_table")
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "user_id")
     private Long id;
 
     private String username;
     private String password;
 
-    @OneToOne(mappedBy = "users", cascade = CascadeType.ALL)
-    private UserRole userRole;
+    @Enumerated(EnumType.STRING)
+    private Role role;
 }

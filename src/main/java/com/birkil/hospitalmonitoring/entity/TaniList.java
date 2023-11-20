@@ -1,5 +1,6 @@
 package com.birkil.hospitalmonitoring.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -20,8 +21,7 @@ public class TaniList {
     @Column
     private String taniAdi;
 
-
     /*@ManyToMany(mappedBy = "taniList")
+    @JsonBackReference
     private List<MuayeneKaydet> muayeneKaydetList;*/
-
 }

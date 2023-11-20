@@ -1,5 +1,6 @@
 package com.birkil.hospitalmonitoring.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -42,12 +43,11 @@ public class MuayeneKaydet {
     @Column
     private String gripAsisiAciklama;
 
-    /*@ManyToMany
-    @JoinTable(
-            name = "muayene_tani", joinColumns = @JoinColumn(name = "muayene_id"),
-            inverseJoinColumns = @JoinColumn(name = "tani_id")
-
+    /*@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinTable(name = "muayene_tani", joinColumns = {@JoinColumn(name = "muayene_id")},
+            inverseJoinColumns = {@JoinColumn(name = "tani_id")}
     )
-    private List<TaniList> taniList;*/
+    @JsonManagedReference
+    private List<TaniList> taniList = new ArrayList<>();*/
 
 }
