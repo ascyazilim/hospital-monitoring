@@ -14,90 +14,22 @@ public class IsgoremezlikRapor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    private RaporBilgisi raporBilgisi;
-
-    @Column(name = "isGoremezlikRaporTuru", length = 1, nullable = false)
-    private int isGoremezlikRaporTuru;
-
-    @Column(name = "bransKodu", length = 4, nullable = false)
-    private String bransKodu;
-
-    @Column(name = "protokolNo", length = 20)
-    private String protokolNo;
-
-    @Column(name = "protokolTarihi")
-    private LocalDate protokolTarihi;
-
-    @Column(name = "duzenlemeTuru", length = 1, nullable = false)
+    private String hastaAdiSoyadi;
+    private String hastaTcKimNo;
+    private String raporDurumu;
+    private String meslekHastaligiSuphesi;
+    private LocalDate ayaktaBaslamaTarihi;
+    private LocalDate ayaktaBitisTarihi;
+    private String doktorAdiSoyadi;
+    private String doktorBrans;
+    private String raporAciklama;
+    private LocalDate duzenlendigiTarih;
+    private LocalDate baslamaTarihi;
+    private String vaka;
     private String duzenlemeTuru;
-
-    @Column(name = "teshis", nullable = false)
-    private String teshis;
-
-    @Column(name = "aciklama",length = 255)
-    private String aciklama;
-
-    @Column(name = "saglikKuruluRaporTarih", length = 20)
-    private String saglikKuruluRaporTarih;
-
-    @Column(name = "olum", length = 1, nullable = false)
-    private String olum;
-
-    @Column(name = "ilkRaporTakipNo")
-    private Long ilkRaporTakipNo;
-
-    @OneToOne
-    @JoinColumn(name = "isKazasiRaporId")
-    private IsKazasiRapor isKazasiRapor;
-
-    @OneToOne
-    @JoinColumn(name = "meslekHastaligiRaporId")
-    private MeslekHastaligiRapor meslekHastaligiRapor;
-
-    @OneToOne
-    @JoinColumn(name = "analikRaporId")
-    private AnalikRapor analikRapor;
-
-    @OneToOne
-    @JoinColumn(name = "emzirmeRaporId")
-    private EmzirmeRapor emzirmeRapor;
-
-    @OneToOne
-    @JoinColumn(name = "hastalikRaporId")
-    private HastalikRapor hastalikRapor;
-
-    @Column(name = "klinikBulgular", length = 20)
-    private String klinikBulgular;
-
-    @Column(name = "ronLabBilgileri")
-    private String ronLabBilgileri;
-
-    @Column(name = "karar", length = 20)
-    private String karar;
-
-    @OneToOne
-    @JoinColumn(name = "doktorBilgisiId")
-    private DoktorBilgisi doktorBilgisi;
-
-    @Column(name = "bashekimOnayDurumu")
-    private int bashekimOnayDurumu;
-
-    @Column(name = "bashekimTCNo", length = 20)
-    private String bashekimTCNo;
-
-    @OneToOne
-    @JoinColumn(name = "haksahibiBilgisiId")
-    private HakSahibiBilgisi hakSahibiBilgisi;
-
-    @Column(name = "devammi", length = 1, nullable = false)
-    private int devammi;
-
-    @Column(name = "yatisDevam", length = 1, nullable = false)
-    private String yatisDevam;
-
-
-
-
+    private String adliVaka;
+    private String yatisDurumu;
+    private String yatarakGunSayisi;
+    private String ayaktaGunSayisi;
 
 }
