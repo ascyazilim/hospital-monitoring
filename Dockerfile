@@ -1,4 +1,4 @@
-FROM adoptopenjdk/openjdk11
+FROM openjdk:17-jdk-slim
 EXPOSE 8080
 ARG JAR_FILE=target/hospitalMonitoring-0.0.1-SNAPSHOT.jar
 ADD ${JAR_FILE} application.jar
