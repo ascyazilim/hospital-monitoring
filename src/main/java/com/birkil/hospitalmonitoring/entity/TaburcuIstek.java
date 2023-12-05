@@ -31,4 +31,6 @@ public class TaburcuIstek {
 
     @Column
     private String aciklama;
+
+
 }

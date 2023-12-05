@@ -55,5 +55,4 @@ public class HastaBilgileri {
     @JoinColumn(name = "takip_id")
     private Takip takip;
 
-
 }
